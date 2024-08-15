@@ -2,6 +2,7 @@ import { AiFillHome } from 'react-icons/ai';
 import MenuItem from './MenuItem';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
 import Link from 'next/link';
+import ToggleMode from './ToggleMode';
 
 const Header = () => {
   return (
@@ -10,12 +11,15 @@ const Header = () => {
         <MenuItem title="Home" address="/" Icon={AiFillHome} />
         <MenuItem title="About" address="/about" Icon={BsFillInfoCircleFill} />
       </div>
-      <Link href="/" className="flex gap-1 items-center">
-        <span className="text-2xl font-bold bg-amber-500 py-1 px-2 rounded-lg">
-          MDb
-        </span>
-        <span className="text-xl hidden sm:inline">Next</span>
-      </Link>
+      <div className="flex items-center gap-4">
+        <ToggleMode />
+        <Link href="/" className="flex gap-1 items-center">
+          <span className="text-2xl font-bold bg-amber-500 py-1 px-2 rounded-lg">
+            MDb
+          </span>
+          <span className="text-xl hidden sm:inline">Next</span>
+        </Link>
+      </div>
     </div>
   );
 };
